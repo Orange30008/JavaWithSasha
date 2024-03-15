@@ -15,6 +15,7 @@ public class Main {
         printPosOrNeg(a);
         //Задание 3
         a = -10;
+
         System.out.println("Задание 3");
         System.out.println(returnTrueNeg(a));
         //Задание 4
@@ -113,6 +114,7 @@ public class Main {
             System.out.println("Отрицательное");
         }
     }
+
 
     public static boolean returnTrueNeg(int a) {
         return a < 0;
