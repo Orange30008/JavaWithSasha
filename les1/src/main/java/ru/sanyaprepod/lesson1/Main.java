@@ -142,6 +142,7 @@ public class Main {
         return left==right;
     }
 
+
     public static void arrMaxMin(int[] arr) {
         int max = arr[0];
         int min = arr[0];
