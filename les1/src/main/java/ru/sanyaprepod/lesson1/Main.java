@@ -128,12 +128,12 @@ public class Main {
     public static boolean checkBalance(int[] arr) {
         int left = arr[0];
         int right = arr[arr.length-1];
-        int j =2;       //j-- реализовать
+        int j = arr.length-2;       //j-- реализовать
         int k =1;
         for (int i = 1; i < arr.length-1; i++) {
             if (left>=right){
-                right+=arr[arr.length-j];
-                j++;
+                right+=arr[j];
+                j--;
             } else {
                 left+=arr[k];
                 k++;
