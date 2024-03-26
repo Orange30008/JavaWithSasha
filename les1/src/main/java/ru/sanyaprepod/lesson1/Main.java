@@ -1,4 +1,4 @@
-package ru.sanyaprepod;
+package ru.sanyaprepod.lesson1;
 
 import java.util.Arrays;
 
@@ -74,23 +74,12 @@ public class Main {
         System.out.println(Arrays.deepToString(privet));
         //Задание 9
         System.out.println("Задание 9");
-        int[] arrMaxMin = {9, 1, 3, 4, 5, 6, 4, 6, 67, 3, 6, 3, 2, 2, 6, 5454, 34, 3, 345, 5, 456, 43, 534, 346, 6, 74, 2};
-        int max = arrMaxMin[0];
-        int min = arrMaxMin[0];
-        System.out.println(Arrays.toString(arrMaxMin));
-        for (int i = 0; i < arrMaxMin.length; i++) {
-            if (arrMaxMin[i] > max) {
-                max = arrMaxMin[i];
-
-            } else if (arrMaxMin[i] < min) {
-                min = arrMaxMin[i];
-            }
-        }
-        System.out.println("Максимальное - " + max + "\nМинимальное - " + min);
+        int[] arr = {9, 1, 3, 4, 5, 6, 4, 6, 67, 3, 6, 3, 2, 2, 6, 5454, 34, 3, 345, 5, 456, 43, 534, 346, 6, 74, 2};
+        arrMaxMin(arr); //чем именно метод поможет от пустого массива?
         //Задание 10
         System.out.println("Задание 10");
         int year = 2012;
-        whatYearNow(year);
+        isLeapYear(year);
         //Задание 11
         System.out.println("Задание 11");
         int[] arrProrokSunBoy = {10, 2, 1, 1, 1, 2, 0, 0, 11};
@@ -128,7 +117,7 @@ public class Main {
         System.out.println("Привет, " + a + "!");
     }
 
-    public static void whatYearNow(int year) {
+    public static void isLeapYear(int year) {
         if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
             System.out.println(year + " - високосный год");
         } else {
@@ -139,17 +128,33 @@ public class Main {
     public static boolean checkBalance(int[] arr) {
         int left = arr[0];
         int right = arr[arr.length-1];
-        int j =2;
+        int j = arr.length-2;       //j-- реализовать
         int k =1;
         for (int i = 1; i < arr.length-1; i++) {
-        if (left>=right){
-            right+=arr[arr.length-j];
-            j++;
-        } else {
-            left+=arr[k];
-            k++;
-        }
+            if (left>=right){
+                right+=arr[j];
+                j--;
+            } else {
+                left+=arr[k];
+                k++;
+            }
         }
         return left==right;
+    }
+
+
+    public static void arrMaxMin(int[] arr) {
+        int max = arr[0];
+        int min = arr[0];
+        System.out.println(Arrays.toString(arr));
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+
+            } else if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        System.out.println("Максимальное - " + max + "\nМинимальное - " + min);
     }
 }
