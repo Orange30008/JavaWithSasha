@@ -128,7 +128,7 @@ public class Main {
     public static boolean checkBalance(int[] arr) {
         int left = arr[0];
         int right = arr[arr.length-1];
-        int j =2;
+        int j =2;       //j-- реализовать
         int k =1;
         for (int i = 1; i < arr.length-1; i++) {
             if (left>=right){
